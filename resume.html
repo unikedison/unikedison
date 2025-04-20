@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rohit Kumar - Resume</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            min-height: 100vh;
+            background: linear-gradient(to bottom, #f0f0f0, #e0e0e0);
+            color: #333;
+        }
+
+        .left-nav {
+            width: 200px;
+            background-color: rgba(240, 240, 240, 0.8);
+            padding-top: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            height: 100%;
+            overflow-y: auto;
+        }
+
+        .left-nav a {
+            display: block;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: #333;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .left-nav a:hover,
+        .left-nav a.active {
+            background-color: #0056b3;
+            color: white;
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-left: 220px;
+            margin-right: 20px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            transition: margin-left 0.3s ease;
+        }
+
+        section {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            color: #0056b3;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .contact-info h1 {
+            font-size: 24px;
+            /* Increased font size for name */
+            margin-bottom: 5px;
+            color: #0056b3;
+        }
+
+        .contact-info p {
+            margin: 5px 0;
+        }
+
+        .job-title {
+            font-weight: bold;
+        }
+
+        .company {
+            font-style: italic;
+            color: #666;
+        }
+
+        .project-description {
+            margin-top: 10px;
+        }
+
+        .skills-list {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        .certification {
+            margin-bottom: 5px;
+        }
+
+        /* Click Effects */
+        .left-nav a:active,
+        .content section:active {
+            transform: scale(0.98);
+            opacity: 0.9;
+        }
+
+        /* Responsive adjustments */
+        @media screen and (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+
+            .left-nav {
+                position: static;
+                width: 100%;
+                overflow-x: auto;
+                white-space: nowrap;
+                padding-bottom: 10px;
+                height: auto;
+            }
+
+            .left-nav a {
+                display: inline-block;
+                border-bottom: none;
+            }
+
+            .content {
+                margin: 10px;
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.left-nav a');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    navLinks.forEach(navLink => navLink.classList.remove('active'));
+                    this.classList.add('active');
+
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+
+                    if (targetSection) {
+                        e.preventDefault();
+                        targetSection.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            document.querySelector('.left-nav a[href="#about-me"]').classList.add('active');
+        });
+    </script>
+</head>
+
+<body>
+
+    <div class="left-nav">
+        <a href="#about-me">About Me</a>
+        <a href="#work-experience">Work Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#certifications">Courses & Certifications</a>
+        <a href="#achievements">Achievements & Awards</a>
+    </div>
+
+    <div class="content">
+        <section id="about-me">
+            <h2>About Me</h2>
+            <div class="contact-info">
+                <h1>Rohit Kumar</h1>
+                <p>Software Engineer</p>
+                <p>
+                    Email: <a href="mailto:nik.kumar.rohit@gmail.com">nik.kumar.rohit@gmail.com</a> |
+                    Phone: +91 7857039862, +91 8864015442 |
+                    Address: Hyderabad, India 500086
+                </p>
+                <p>
+                    LinkedIn: <a href="https://www.linkedin.com/in/unikedison/">https://www.linkedin.com/in/unikedison/</a> |
+                    GitHub: <a href="https://github.com/unikedison">https://github.com/unikedison</a>
+                </p>
+            </div>
+            <p>Experienced Full Stack Developer with a strong foundation in Web Development, Windows Form Application,
+                and Database Management. Proficient in a wide range of programming languages and
+                technologies, including C#, JavaScript, Angular, jQuery, .NET Core, ASP.NET, ADO.NET, Rest APIs, MVC,
+                Web Services, Azure, and SQL Server. Possesses a proven track record of delivering
+                high-quality, scalable solutions for diverse projects. Adept at collaborating with cross-functional
+                teams to meet project goals and deadlines. Committed to staying up-to-date with the latest
+                industry trends and continuously enhancing skills to drive innovation and optimize software solutions.
+                Seeking opportunities to leverage expertise in developing cutting-edge applications and delivering exceptional
+                user experiences.</p>
+        </section>
+
+        <section id="work-experience">
+            <h2>Work Experience</h2>
+
+            <div class="experience-item">
+                <p class="job-title">Software Engineer</p>
+                <p class="company">CHUBB Hyderabad</p>
+                <p class="duration">01/2022 - Current</p>
+                <ul>
+                    <li>Developed and maintained a utility application that serves as a central hub for 35 distinct sub-applications, designed to simplify and optimize workflows for developers, quality assurance, software configuration management, and DevOps personnel.</li>
+                    <li>Developed Visual Studio Extensions (WCF)</li>
+                    <li>Designed databases to store application data using SQL Server.</li>
+                    <li>Utilized version control tools to manage source codes across multiple projects.</li>
+                    <li>Utilized Agile methodologies to mariage project timelines and deliverables efficiently.</li>
+                    <li>Azure services for application hosting and code deployment.</li>
+                    <li>Implemented and maintained CI/CD pipelines on Azure DevOps.</li>
+                    <li>Platform upgrades, specifically transitioning to Express 3.</li>
+                    <li>Core system development and maintenance, focusing on CBOs and integrations.</li>
+                    <li>Utility development, including Trace Monitor, Radar response transformation, MSCop and a Third-Party integration system, leveraging Duck Creek integration.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <p class="job-title">Project Trainee</p>
+                <p class="company">Acty System Ahmedabad</p>
+                <p class="duration">02/2022 - 03/2022</p>
+                <ul>
+                    <li>Contributed to the development of utilities, DLLs (Dynamic Link Libraries), and services using Windows Forms.</li>
+                    <li>Assisted in the creation of DLLs to encapsulate reusable code components, promoting modularity and code reusability.</li>
+                    <li>Attended training sessions and meetings to learn new information and develop personal skills.</li>
+                    <li>Gained practical experience in designing and developing Windows services to perform background tasks and system-level operations.</li>
+                    <li>Collaborated closely with cross-functional teams to gather requirements, define project scopes, and deliver solutions that met business objectives.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <p class="job-title">Software Engineer</p>
+                <p class="company">Netprophets Cyberworks Pvt Ltd | Noida</p>
+                <p class="duration">09/2018 - 07/2019</p>
+                <ul>
+                    <li>Spearheaded the development of both internal and public websites, ensuring seamless user experiences and responsive design.</li>
+                    <li>Designed and implemented utility tools to enhance operational efficiency, automating repetitive tasks and streamlining processes.</li>
+                    <li>Developed vendor management applications, optimizing supplier relationships and procurement processes.</li>
+                    <li>Leveraged a deep understanding of web development, including HTML, CSS, and JavaScript, to create visually appealing and user-friendly interfaces.</li>
+                    <li>Documented software designs and architecture for future reference and maintenance.</li>
+                </ul>
+            </div>
+
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul class="skills-list">
+                <li>C#</li>
+                <li>MVC</li>
+                <li>Angular</li>
+                <li>ADO.NET</li>
+                <li>Web APIs</li>
+                <li>.NET Core</li>
+                <li>Entity Framework</li>
+                <li>ASP.NET & ASP.NET Core</li>
+                <li>Windows Form Application</li>
+                <li>SQL Server</li>
+                <li>Azure & DevOps</li>
+                <li>HTML 5 / CSS 3 / Bootstrap</li>
+                <li>JavaScript / jQuery / AJAX</li>
+                <li>GitHub - Version control</li>
+                <li>Full stack development</li>
+                <li>Agile methodologies</li>
+                <li>DuckCreek Integration</li>
+                <li>DC Upgrade & Express 3</li>
+            </ul>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="project-item">
+                <p class="project-title">Angular Development Project</p>
+                <p class="project-description">Developed and maintained an Angular utility application that serves as a central hub for 35 distinct sub-applications, designed to simplify and optimize workflows for developers, quality assurance, software configuration management, and DevOps personnel.</p>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <div class="education-item">
+                <p><strong>MCA</strong> - BIT Mesra, Ranchi - 01/2022</p>
+            </div>
+            <div class="education-item">
+                <p><strong>BCA</strong> - Sikkim Manipal University | Sikkim - 01/2017</p>
+            </div>
+        </section>
+
+        <section id="certifications">
+            <h2>Courses & Certifications</h2>
+            <div class="certification">
+                <p>AINS</p>
+            </div>
+            <div class="certification">
+                <p>Azure AZ-900</p>
+            </div>
+             <div class="certification">
+
+                <p>Microsoft Advance Dotnet</p>
+            </div>
+            <div class="certification">
+                <p>Diploma in Hardware & Networking</p>
+            </div>
+            <div class="certification">
+                <p>Managing Interconnected Network Devices</p>
+            </div>
+
+        </section>
+
+        <section id="achievements">
+            <h2>Achievements & Awards</h2>
+            <ul>
+                <li>CHUBB Excellence Award Q2 2023 (Platinum)</li>
+                <li>CHUBB Excellence Award Q3 2023 (Platinum)</li>
+                 <li>CHUBB Excellence Award Q3 2024 (Platinum)</li>
+            </ul>
+        </section>
+
+    </div>
+
+</body>
+
+</html>
